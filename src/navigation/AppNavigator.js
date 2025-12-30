@@ -13,6 +13,7 @@ import {
   PlayerDetailScreen,
   NewsScreen,
   SettingsScreen,
+  ReelsScreen,
 } from '../screens';
 
 const Stack = createNativeStackNavigator();
@@ -93,6 +94,17 @@ const SettingsStack = () => (
   </Stack.Navigator>
 );
 
+// Reels Stack
+const ReelsStack = () => (
+  <Stack.Navigator screenOptions={defaultScreenOptions}>
+    <Stack.Screen
+      name="ReelsHome"
+      component={ReelsScreen}
+      options={{ headerShown: false }}
+    />
+  </Stack.Navigator>
+);
+
 // Tab Navigator
 const TabNavigator = () => (
   <Tab.Navigator
@@ -119,6 +131,9 @@ const TabNavigator = () => (
           case 'Games':
             iconName = focused ? 'basketball' : 'basketball-outline';
             break;
+          case 'Reels':
+            iconName = focused ? 'play-circle' : 'play-circle-outline';
+            break;
           case 'Players':
             iconName = focused ? 'people' : 'people-outline';
             break;
@@ -137,6 +152,7 @@ const TabNavigator = () => (
     })}
   >
     <Tab.Screen name="Games" component={GamesStack} />
+    <Tab.Screen name="Reels" component={ReelsStack} />
     <Tab.Screen name="Players" component={PlayersStack} />
     <Tab.Screen name="News" component={NewsStack} />
     <Tab.Screen name="Settings" component={SettingsStack} />

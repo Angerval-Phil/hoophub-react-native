@@ -730,6 +730,10 @@ const styles = StyleSheet.create({
   },
 });
 
+// Video Components
+export { default as VideoPlayer } from './VideoPlayer';
+export { default as ReelCard } from './ReelCard';
+
 export default {
   GameCard,
   TeamLogo,
